@@ -1,23 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Service from "./Service";
+import Servicess from "./Servicess";
 
 export default function Count() {
 
-    const [count,setCount]=useState(0)
+    // const [count, setCount] = useState(0);
+    const [stack, setCondition] = useState(false);
+    // console.log(!stack);
 
-    function increaseClick() {
-        // const newCount = count + 1;
-        setCount(count+1)
+    function condition() {
+        setCondition(!stack)
     }
-   
+    
+function transfer(message) {
+    console.log(message);
+}
+    // useEffect(() => {
+        // console.log('hello from use effect');
+    // },[count])
+
+    // function increaseClick() {
+    //     setCount(count+1)
+    // }   
 
 
 
-    let counter = 0;
-    function increaseClick2() {
-        counter = counter + 1
-        console.log(counter);
-    }
-   
+    // let counter = 0;
+    // function varClick() {
+    //     counter = counter + 1;
+    //     // console.log(counter);
+    // }
+
+    // console.log("counter");
     function show(message) {
     console.log(message);
     }
@@ -25,13 +39,14 @@ export default function Count() {
         <div>
             <button onClick={()=>show('this is a new message')}>Click</button>
             <br />
-            <h2>{ count}</h2>
-            <button onClick={increaseClick}>increase</button>
-            <button>decrease</button>
-            <br />
-            <h2>{ counter}</h2>
-            <button onClick={increaseClick2}>increase</button>
-            <button>decrease</button>
+            {/* <h2>{ count}</h2> */}
+            {/* <button onClick={increaseClick}>stack click</button> */}
+            {/* <button onClick={varClick}>variable click</button> */}
+            <button onClick={condition}>Condition</button>
+            {/* {
+                stack?<Service transfer={transfer}></Service>:<Servicess></Servicess>
+            } */}
+            <Service transfer={transfer}></Service>
         </div>
     )
 }

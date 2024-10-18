@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Count></Count>
-    <Product info={info}></Product>
+    {/* <Product info={info}></Product> */}
      <div>
     <h3>React Core Concepts Recap</h3>
     <ol>
